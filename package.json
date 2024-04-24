@@ -1,0 +1,38 @@
+{
+  "name": "deposito",
+  "version": "1.0.0",
+  "description": "Gerenciamento de drpósito de bebidas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fabiano-Lages/Deposito.git"
+  },
+  "keywords": [
+    "deposito",
+    "bebidas",
+    "handlebars",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "Fabiano Teixeira Lages",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fabiano-Lages/Deposito/issues"
+  },
+  "homepage": "https://github.com/Fabiano-Lages/Deposito#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "connect-flash": "^0.1.1",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.1.1"
+  }
+}
