@@ -21,8 +21,8 @@ app.use((req, res, next) => {
     next();
 });
 
-app.engine("handlebars", handlebars.engine({defaultLayout: "principal"}));
-app.set("view engine", "handlebars");
+app.engine(".hbs", handlebars.engine({defaultLayout: "principal", extname: ".hbs"}));
+app.set("view engine", "hbs");
 app.set("views", `${config._DirName}/views`);
 
 app.use(bodyParser.urlencoded({extended:false}));
@@ -34,7 +34,7 @@ app.use(routes.routerMain);
 //app.use("/Lista", routesLista.routerLista);
 //app.use("/Cliente", routesCliente.routerCliente);
 //app.use("/Orcamento", routesOrca.routerOrca);
-
+ 
 app.listen(config._Porta, () => {
     console.log(`Aplicativo Orçamento escutando na porta ${config._Porta}`);
 }); 
