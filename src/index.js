@@ -19,7 +19,7 @@ app.use((req, res, next) => {
     res.locals.Log = req.flash("Log");
     res.locals.Erro = req.flash("Erro");
     next();
-});
+}); 
 
 app.engine("handlebars", handlebars.engine({defaultLayout: "principal"}));
 app.set("view engine", "handlebars");
