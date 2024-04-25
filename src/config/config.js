@@ -1,5 +1,5 @@
 const _Porta = 3080;
-const _DirName = require.main.path;
+const _DirName = require("path").dirname(__dirname);
 
 const _Banco = "mongodb://localhost:27017/Deposito";
 
