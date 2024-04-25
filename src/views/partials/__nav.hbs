@@ -1,23 +1,50 @@
-<div class="d-flex align-items-start">
-    <ul class="nav nav-pills">
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Active</a>
-    </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
-        <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Separated link</a></li>
+<nav class="navbar navbar-expand-lg navbar-dark bg-menu">
+    <a class="navbar-brand" href="/">
+        <div class="d-flex">
+            <img src="img/logo.png" height="50px" />
+            FTL StoreMan
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/Vendas">Vendas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/Produtos">Produtos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/Clientes">Clientes</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Gerenciamento
+                </a>
+                <ul class="dropdown-menu bg.menu">
+                    <li><a class="dropdown-item" href="/Gerenciamento/ContasPagar">Contas a pagar</a></li>
+                    <li><a class="dropdown-item" href="/Gerenciamento/Caderno">Caderno</a></li>
+                    <li><a class="dropdown-item" href="/Gerenciamento/Calendario">Calendário</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Relaórios
+                </a>
+                <ul class="dropdown-menu bg.menu">
+                    <li><a class="dropdown-item" href="/Relatorio/Vendas">Vendas</a></li>
+                    <li><a class="dropdown-item" href="/Relatorio/Estoque">Estoque</a></li>
+                    <li><a class="dropdown-item" href="/Relatorio/FluxoCaixa">Fluxo de Caixa</a></li>
+                </ul>
+            </li>
         </ul>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-    </li>
-    </ul>
-</div>
+        <form class="d-flex" role="search" id="frmProcurar" action="/Procurar">
+            <input class="form-control me-2" type="search" id="txtProcurar" placeholder="Procurar" aria-label="Procurar">
+            <button class="btn btn-secondary" id="btnProcurar" type="submit" title="Clique para realizar a busca"><i class="bi bi-search"></i></button>
+        </form>
+    </div>
+</nav>
