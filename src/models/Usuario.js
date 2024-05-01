@@ -10,6 +10,10 @@ const Usuario = new Schema({
         type: String,
         required: true
     },
+    senha: {
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         required: true
@@ -31,4 +35,4 @@ const Usuario = new Schema({
     }
 });
 
-mongoose.model("Usuarios", Usuario);
+mongoose.model("usuarios", Usuario);

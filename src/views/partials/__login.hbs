@@ -1,0 +1,25 @@
+<div class="modal fade" id="staticLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticLoginLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticLoginLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="frmLogar" method="post" action="/Login">
+          <div class="mb-3">
+            <input type="text" class="form-control" id="txtLogin" name="txtLogin" placeholder="Usuário" required />
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" id="txtSenha" name="txtSenha" placeholder="Senha" required />
+          </div>
+          <button type="submit" class="d-none" id="btnLogar"></button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" onclick="logar()">Conectar</button>
+      </div>
+    </div>
+  </div>
+</div>

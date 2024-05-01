@@ -87,6 +87,14 @@
     padding-right: 20px !important;
 }
 
+nav li:hover {
+  cursor: pointer;
+}
+
+nav button:hover {
+  color: white;
+}
+
 .navbar-brand div {
     flex-direction: column;
     align-items: center;

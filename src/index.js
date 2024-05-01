@@ -36,5 +36,5 @@ app.use(routes.routerMain);
 //app.use("/Orcamento", routesOrca.routerOrca);
  
 app.listen(config._Porta, () => {
-    console.log(`Aplicativo Orçamento escutando na porta ${config._Porta}`);
+    console.log(`Aplicativo Deposito escutando na porta ${config._Porta}`);
 }); 
