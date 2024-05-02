@@ -2,29 +2,41 @@ const routerMain = require("express").Router();
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 require("../models/Usuario");
+require("../models/TipoUsuario");
+
+const boasVindas = (horas) => {
+    return(horas < 12 ? "Bom dia" : (horas < 18 ? "Boa tarde" : "Boa noite"));
+};
 
 routerMain.get("/", (req, res) => {
-    res.render("home", {nome: req.session.nome, autenticado: req.session.autenticado}); 
+    console.log((new Date()).getHours());
+    res.render("home", {nome: req.session.nome, autenticado: req.session.autenticado, boasVindas: `${boasVindas((new Date()).getHours())} ${req.session.nome}`}); 
 });
 
 routerMain.post("/Login", async (req, res) => {
-    const usuario = mongoose.model("usuarios");
-    data = await usuario.find({login: req.body.txtLogin});
-    if(data && data.length > 0){
-        const reg = data[0];
-        const autenticado = await bcrypt.compare(reg.senha, req.body.txtSenha);
-
-        if (!autenticado) {
-            req.flash("Erro", "Senha inválida");
-        } else {
-            req.session.autenticado = autenticado;
-            req.session.nome = reg.nome;
+    const usuarios = mongoose.model("usuarios");
+    usuarios.findOne({login: req.body.txtLogin})
+        .then(async (usuario) => {
+            if(usuario) {
+                bcrypt.compare(req.body.txtSenha, usuario.senha)
+                    .then((autenticado) => {
+                        if(autenticado) {
+                            req.session.autenticado = autenticado;
+                            req.session.nome = usuario.nome;
+                            req.session.id = usuario._id;
+                            res.render("home", {autenticado, nome: req.session.nome, boasVindas: `${boasVindas((new Date()).getHours())} ${req.session.nome}`});
+                        } else {
+                            req.flash("Erro", `Senha inválida!`);
+                            res.render("home", {login: req.body.txtLogin});
+                        }
+                    }
+                );
+            } else {
+                req.flash("Erro", "Usuário não encontrado!");
+                res.redirect("/");
+            }
         }
-    } else {
-        req.flash("Erro", "Usuário não encontrado!");
-    }
-
-    res.redirect("/");
+    );
 });
 
 routerMain.get("/Vendas", (req, res) => {

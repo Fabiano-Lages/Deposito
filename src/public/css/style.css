@@ -95,6 +95,10 @@ nav button:hover {
   color: white;
 }
 
+#mnConfig {
+  margin-top: 25px;
+}
+
 .navbar-brand div {
     flex-direction: column;
     align-items: center;

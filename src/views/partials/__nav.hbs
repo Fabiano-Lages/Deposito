@@ -43,10 +43,18 @@
                     </ul>
                 </li>
             </ul>
-            <form class="d-flex" role="search" id="frmProcurar" method="post" action="/Procurar">
+            <form class="d-flex me-2" role="search" id="frmProcurar" method="post" action="/Procurar">
                 <input class="form-control me-2" type="search" id="txtProcurar" placeholder="Procurar" required aria-label="Procurar">
                 <button class="btn btn-secondary" id="btnProcurar" type="submit" title="Clique para realizar a busca"><i class="bi bi-search"></i></button>
             </form>
+            <div class="nav-item dropdown dropstart">
+                <button class="btn btn-secondary dropdown-toggle" id="btnConfigurar" type="submit" title="Configuração" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-gear-wide-connected"></i></button>
+                <ul id="mnConfig" class="dropdown-menu bg.menu">
+                    <li><a class="dropdown-item" href="/Configurar/Usuarios">Usuários</a></li>
+                    <li><a class="dropdown-item" href="/Configurar/Perfil">Perfil</a></li>
+                    <li><a class="dropdown-item" href="javascript:desconectar();">Sair</a></li>
+                </ul>
+            </div>
         </div>
     {{else}}
         <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#staticLogin" title="Login">

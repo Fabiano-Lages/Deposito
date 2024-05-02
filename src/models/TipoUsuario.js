@@ -18,4 +18,4 @@ const TipoUsuario = new Schema({
     }
 });
 
-mongoose.model("TiposUsuario", TipoUsuario);
+mongoose.model("tiposusuarios", TipoUsuario);
